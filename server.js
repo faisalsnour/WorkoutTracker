@@ -4,8 +4,11 @@ let mongoose = require("mongoose");
 
 const PORT = process.env.PORT || 8088
 
-const Workout = require("./model/workout.js");
+const Workout = require("./model/Workout.js");
 const app = express()
+
+const db = require("./model");
+
 
 app.use(logger("dev"));
 
@@ -34,25 +37,35 @@ app.use(express.static('public'))
 //         console.log(message);
 //     });
 
-app.get("/books", (req, res) => {
-    db.Book.find({})
-        .then(dbBook => {
-            res.json(dbBook);
-        })
-        .catch(err => {
-            res.json(err);
-        });
-});
+// app.get("/notes", (req, res) => {
+//     db.Note.find({})
+//       .then(dbNote => {
+//         res.json(dbNote);
+//       })
+//       .catch(err => {
+//         res.json(err);
+//       });
+//   });
 
-app.post("/submit", ({ body }, res) => {
-    User.create(body)
-        .then(dbUser => {
-            res.json(dbUser);
-        })
-        .catch(err => {
-            res.json(err);
-        });
-});
+// app.get("/books", (req, res) => {
+//     db.Book.find({})
+//         .then(dbBook => {
+//             res.json(dbBook);
+//         })
+//         .catch(err => {
+//             res.json(err);
+//         });
+// });
+
+// app.post("/submit", ({ body }, res) => {
+//     User.create(body)
+//         .then(dbUser => {
+//             res.json(dbUser);
+//         })
+//         .catch(err => {
+//             res.json(err);
+//         });
+// });
 
 
 
