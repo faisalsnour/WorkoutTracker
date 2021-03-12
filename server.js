@@ -9,6 +9,8 @@ const app = express()
 
 const db = require("./model");
 
+// used to navigate between pagess
+var path = require("path");
 
 app.use(logger("dev"));
 
@@ -16,12 +18,30 @@ const mongojs = require("mongojs");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+
 // const apirouter = require('./app/router')
 
 mongoose.connect("mongodb://localhost/workout", {
     useNewUrlParser: true,
     useFindAndModify: false
 });
+
+// routes
+
+
+
+// To go stat.html page
+app.get("/stats", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/stats.html"));
+});
+// To go exercise.html page
+app.get("/exercise", function (req, res) {
+    res.sendFile(path.join(__dirname, "./public/exercise.html"));
+});
+
+
+
 
 
 // will share any static html files with the browser
