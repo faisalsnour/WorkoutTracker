@@ -25,6 +25,37 @@ module.exports = function (app) {
         });
     });
 
+    // to take workout id and add new excercise to it - Done
+    app.put("/api/workouts/:id", (req, res) => {
+
+        db.Workout.findOneAndUpdate(
+            {
+                _id: req.params.id
+            },
+            {
+                $push: {
+                    exercises: [
+                        {
+                            "type": req.body.type,
+                            "name": req.body.name,
+                            "duration": req.body.duration,
+                            "distance": req.body.distance,
+                            "weight": req.body.weight,
+                            "reps": req.body.reps,
+                            "sets": req.body.sets
+                        }
+                    ]
+                }
+            },
+            (error, data) => {
+                if (error) {
+                    res.send(error);
+                } else {
+                    res.send(data);
+                }
+            }
+        );
+    });
 
 
 };
