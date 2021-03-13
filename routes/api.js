@@ -57,5 +57,16 @@ module.exports = function (app) {
         );
     });
 
+    app.get("/api/workouts/range", (req, res) => {
+        db.Workout.find({}, (err, found) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.json(found);
+                console.log(found)
+            }
+        });
+    });
+
 
 };
