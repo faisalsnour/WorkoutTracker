@@ -2,15 +2,16 @@ var db = require("../model");
 
 module.exports = function (app) {
 
-    // to create new workout in the database - Done
-    app.post("/api/workouts", async (req, res) => {
-        try {
-            const newDatabse = await db.Workout.create({ type: "workout" })
-            res.json(newDatabse);
-        }
-        catch (err) {
-            console.log(err)
-        }
+    // to create new workout - Done
+    app.post("/api/workouts", (req, res) => {
+        db.Workout.create({ type: "Workout" }, (err, found) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.json(found);
+                console.log(found)
+            }
+        })
     })
 
     // to get all workout - Done
