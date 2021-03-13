@@ -18,11 +18,11 @@ This application has the following features:
 
 The following pictures show the web application's appearance and functionality:
 
-![](/Assets/homepageSC.png)
+![Home page of the application](public/Assets/img/home-page.png)
 
-![](/Assets/searchResultSC.png)
+![Dashboard page](public/Assets/img/workout-dashboard.png)
 
-![](/Assets/cityInfoSC.png)
+![Add new excercise](public/Assets/img/new-entry.png)
 
 ## Live URL of the deployed application:
 
