@@ -13,6 +13,17 @@ module.exports = function (app) {
         }
     })
 
+    // api to get the last workout - Done
+    app.get("/api/workouts", (req, res) => {
+        db.Workout.find({}, (err, found) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.json(found);
+                console.log(found)
+            }
+        });
+    });
 
 
 
