@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const PORT = process.env.PORT || 8000;
+// const PORT = process.env.PORT || 8000;
 
 // to create connection to the database
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
