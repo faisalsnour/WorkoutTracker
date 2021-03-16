@@ -27,13 +27,13 @@ mongoose.connect(
 );
 
 
-const db = require("./model");
+// const db = require("./model");
 
 
-app.use(require("./routes/pageRoute"))
-app.use(require("./routes/api"))
-// require("./routes/pageRoute")(app);
-// require("./routes/api")(app);
+// app.use(require("./routes/pageRoute"))
+// app.use(require("./routes/api"))
+require("./routes/pageRoute")(app);
+require("./routes/api")(app);
 
 
 app.listen(PORT, () => {
