@@ -26,4 +26,4 @@ The following pictures show the web application's appearance and functionality:
 
 ## Live URL of the deployed application:
 
-[please click here]()
+[please click here](https://workout-tracker-faisal.herokuapp.com/)
