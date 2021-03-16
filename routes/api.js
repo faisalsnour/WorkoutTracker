@@ -4,7 +4,7 @@ module.exports = function (app) {
 
     // to create new workout - Done
     app.post("/api/workouts", (req, res) => {
-        db.Workout.create({ type: "Workout" }, (err, found) => {
+        db.workout.create({ type: "workout" }, (err, found) => {
             if (err) {
                 console.log(err);
             } else {
@@ -16,7 +16,7 @@ module.exports = function (app) {
 
     // to get all workout - Done
     app.get("/api/workouts/range", (req, res) => {
-        db.Workout.find({}, (err, found) => {
+        db.workout.find({}, (err, found) => {
             if (err) {
                 console.log(err);
             } else {
@@ -28,7 +28,7 @@ module.exports = function (app) {
 
     // api to get the last workout - Done
     app.get("/api/workouts", (req, res) => {
-        db.Workout.find({}, (err, found) => {
+        db.workout.find({}, (err, found) => {
             if (err) {
                 console.log(err);
             } else {
@@ -41,7 +41,7 @@ module.exports = function (app) {
     // to take workout id and add new excercise to it - Done
     app.put("/api/workouts/:id", (req, res) => {
 
-        db.Workout.findOneAndUpdate(
+        db.workout.findOneAndUpdate(
             {
                 _id: req.params.id
             },
