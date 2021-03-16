@@ -29,9 +29,10 @@ mongoose.connect(
 
 // const db = require("./model");
 
-
+// the following two line can be used instead of line 36 and 37
 // app.use(require("./routes/pageRoute"))
 // app.use(require("./routes/api"))
+
 require("./routes/pageRoute")(app);
 require("./routes/api")(app);
 
